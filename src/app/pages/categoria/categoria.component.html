@@ -37,7 +37,15 @@
         <tr>
           <td><span class="ui-column-title">Código</span> {{categoria.id}}</td>
           <td><span class="ui-column-title">Categoria</span>{{categoria.nome}}</td>
-          <td><button type="button" pButton>D</button></td>
+          <td>
+            <button type="button" icon="pi pi-pencil" pButton></button>&nbsp;
+            <button 
+              type="button" 
+              icon="pi pi-trash"
+              pButton 
+              (click)="delete(categoria.id)"
+            ></button>
+          </td>
         </tr>
       </ng-template>
     </p-table>

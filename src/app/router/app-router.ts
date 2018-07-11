@@ -11,5 +11,5 @@ export const ROUTES: Routes = [
     {
         path: 'categorias',
         component: CategoriaComponent
-    }
+    }        
 ]
