@@ -28,17 +28,11 @@ export class MenubarComponent implements OnInit {
         items: [          
           {
             label: 'Categorias',
-            items: [
-              {
-                label: 'Novo',
-                icon: 'fa fa-fw fa-plus',
-                routerLink: '/categorias'                
-              },
-              {
-                label: 'Listar',
-                icon: ''
-              }
-            ]
+            routerLink: '/categorias'
+          },
+          {
+            label: 'Produtos',
+            routerLink: ''
           }
         ]
       }
