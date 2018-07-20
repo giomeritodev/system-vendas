@@ -29,8 +29,8 @@ export class CategoriaService {
     return this.http.get<CategoriaDTO>(`${API_CONFIG.baseURL}/categorias/${id}`);
   }
 
-  alterar(categoriaId: string): Observable<CategoriaDTO> {
-    return this.http.put<CategoriaDTO>(`${API_CONFIG.baseURL}/categorias/${categoriaId}`, this.categoriaDTO);
+  alterar(id: string): Observable<CategoriaDTO> {
+    return this.http.put<CategoriaDTO>(`${API_CONFIG.baseURL}/categorias/${id}`, this.categoriaDTO);
   }
 
   deletar(id: string): Observable<CategoriaDTO> {

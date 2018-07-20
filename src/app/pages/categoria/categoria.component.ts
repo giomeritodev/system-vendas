@@ -16,6 +16,7 @@ export class CategoriaComponent implements OnInit {
   categorias: CategoriaDTO[];
 
   categoriaForm: FormGroup;
+  nome: string;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -30,7 +31,7 @@ export class CategoriaComponent implements OnInit {
 
   configurarFormulário() {
     this.categoriaForm = this.formBuilder.group({
-      nome: [null, Validators.required]
+      nome: [this.nome, Validators.required]
     });
   }
 
@@ -38,7 +39,7 @@ export class CategoriaComponent implements OnInit {
     this.categoriaService.findAll().subscribe(response => {
       this.categorias = response;
     }, error => {
-      console.log("Erro ao retornar os dados");
+      this.messageService.add({severity: 'error', detail: 'Erro ao retornar os dados'});
     });
   }
 
@@ -59,22 +60,19 @@ export class CategoriaComponent implements OnInit {
   }
 
   alterar(id: string) {
-    console.log("Esta certo, vamos lá");
-    console.log(id);
     this.categoriaService.findById(id).subscribe(response => {
-      //Falta implementação.             
+      this.nome = response.nome;            
     }, (err: HttpErrorResponse) => {
-      console.log("Erro au pegar os dados da categoria!");
+      this.messageService.add({severity: 'error', detail: 'Erro au pegar os dados da categoria!'});
     });
   }
 
   delete(id: string) {
-    this.categoriaService.deletar(id).subscribe(response => {
+    this.categoriaService.deletar(id).subscribe(response => {      
       this.messageService.add({ severity: 'success', detail: 'Categoria delatada com sucesso!' });
       this.listar();
     }, error => {
-      this.messageService.add({severity: 'error', detail: 'A categoria não pode ser deletada, pois existem dados relacionados!'});
+      this.messageService.add({severity: 'error', detail: 'A categoria não pode ser deletada!'});
     });
   }
-
 }

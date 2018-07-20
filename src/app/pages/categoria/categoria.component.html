@@ -1,54 +1,53 @@
-<div class="ui-g">
-  <div class="ui-g-12">
+<div class="container">
+  
+  <div class="ui-g">
+    <div class="ui-g-12">
 
-    <!--Formulário para cadastro de uma nova categoria-->
-    <form  (ngSubmit)="criar()" [formGroup]="categoriaForm">
-      <div class="ui-g-4 ui-sm-12 ui-fluid">
-        <label>Nome da Categoria</label>
-        <input type="text" pInputText id="nome" formControlName="nome" #categoria required />
-      </div>
-      <div class="ui-g-1 ui-sm-4 ui-fluid">
-        <br />
-        <button pButton type="submit" icon="pi pi-plus" [disabled]="!categoria.value"></button>
-      </div>
-    </form>
-    <!--Fim do formulário-->
+      <!--Formulário para cadastro de uma nova categoria-->
+      <form (ngSubmit)="criar()" [formGroup]="categoriaForm">
+        <div class="ui-g-12 ui-sm-12 ui-fluid">
+          <label>Nome da Categoria</label>
+          <input type="text" pInputText id="nome" formControlName="nome" #categoria required />
+        </div>
+        <div class="ui-g-1 ui-sm-4 ui-fluid">
+          <button pButton type="submit" icon="pi pi-plus" [disabled]="!categoria.value"></button>
+        </div>
+      </form>
+      <!--Fim do formulário-->
 
-  </div>
-</div>
-
-<div class="ui-g">
-
-  <div class="ui-g-12">
-    <p-table [value]="categorias" responsive="true">
-
-      <ng-template pTemplate="caption">
-        Listagem de categorias
-      </ng-template>
-
-      <ng-template pTemplate="header">
-        <tr>
-          <th class="col-header-id">Código</th>
-          <th>Categoria</th>
-          <th>Opções</th>
-        </tr>
-      </ng-template>
-      <ng-template pTemplate="body" let-categoria>
-        <tr>
-          <td><span class="ui-column-title">Código</span> {{categoria.id}}</td>
-          <td><span class="ui-column-title">Categoria</span>{{categoria.nome}}</td>
-          <td>
-            <button type="button" icon="pi pi-pencil" pButton></button>&nbsp;
-            <button 
-              type="button" 
-              icon="pi pi-trash"
-              pButton 
-              (click)="delete(categoria.id)"
-            ></button>
-          </td>
-        </tr>
-      </ng-template>
-    </p-table>
+    </div>
   </div>
 
+  <div class="ui-g">
+
+    <div class="ui-g-12">
+      <p-table [value]="categorias" responsive="true">
+
+        <ng-template pTemplate="caption">
+          Listagem de categorias
+        </ng-template>
+
+        <ng-template pTemplate="header">
+          <tr>
+            <th class="col-header-id">Código</th>
+            <th>Categoria</th>
+            <th>Opções</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-categoria>
+          <tr>
+            <td>
+              <span class="ui-column-title">Código</span> {{categoria.id}}</td>
+            <td>
+              <span class="ui-column-title">Categoria</span>{{categoria.nome}}</td>
+            <td>
+              <button type="button" icon="pi pi-pencil" pButton></button>&nbsp;
+              <button type="button" icon="pi pi-trash" pButton (click)="delete(categoria.id)"></button>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+
+  </div>
 </div>
