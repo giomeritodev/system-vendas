@@ -7,7 +7,7 @@
       <form (ngSubmit)="criar()" [formGroup]="categoriaForm">
         <div class="ui-g-12 ui-sm-12 ui-fluid">
           <label>Nome da Categoria</label>
-          <input type="text" pInputText id="nome" formControlName="nome" #categoria required />
+          <input type="text" pInputText formControlName="nome" #categoria required />
         </div>
         <div class="ui-g-1 ui-sm-4 ui-fluid">
           <button pButton type="submit" icon="pi pi-plus" [disabled]="!categoria.value"></button>
@@ -41,7 +41,7 @@
             <td>
               <span class="ui-column-title">Categoria</span>{{categoria.nome}}</td>
             <td>
-              <button type="button" icon="pi pi-pencil" pButton></button>&nbsp;
+              <button type="button" icon="pi pi-pencil" pButton (click)="editar(categoria.id)"></button>&nbsp;
               <button type="button" icon="pi pi-trash" pButton (click)="delete(categoria.id)"></button>
             </td>
           </tr>

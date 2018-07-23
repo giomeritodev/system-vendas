@@ -16,7 +16,7 @@ export class CategoriaComponent implements OnInit {
   categorias: CategoriaDTO[];
 
   categoriaForm: FormGroup;
-  nome: string;
+ 
 
   constructor(
     private formBuilder: FormBuilder,
@@ -31,7 +31,7 @@ export class CategoriaComponent implements OnInit {
 
   configurarFormulário() {
     this.categoriaForm = this.formBuilder.group({
-      nome: [this.nome, Validators.required]
+      nome: ['', Validators.required]
     });
   }
 
@@ -59,17 +59,17 @@ export class CategoriaComponent implements OnInit {
       });
   }
 
-  alterar(id: string) {
+  editar(id: string) {
     this.categoriaService.findById(id).subscribe(response => {
-      this.nome = response.nome;            
+      this.categoriaForm.get('nome').setValue(response.nome);                
     }, (err: HttpErrorResponse) => {
-      this.messageService.add({severity: 'error', detail: 'Erro au pegar os dados da categoria!'});
+      this.messageService.add({severity: 'error', detail: 'Erro ao carregar os dados da categoria! Id: ' + id});
     });
   }
 
   delete(id: string) {
-    this.categoriaService.deletar(id).subscribe(response => {      
-      this.messageService.add({ severity: 'success', detail: 'Categoria delatada com sucesso!' });
+    this.categoriaService.deletar(id).subscribe(response => {                  
+      this.messageService.add({ severity: 'success', detail: 'Categoria delatada com sucesso!'});
       this.listar();
     }, error => {
       this.messageService.add({severity: 'error', detail: 'A categoria não pode ser deletada!'});
