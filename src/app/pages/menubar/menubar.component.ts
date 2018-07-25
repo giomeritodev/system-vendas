@@ -32,7 +32,7 @@ export class MenubarComponent implements OnInit {
           },
           {
             label: 'Produtos',
-            routerLink: ''
+            routerLink: '/produtos'
           }
         ]
       }

@@ -19,6 +19,8 @@ import { ROUTES } from './router/app-router';
 import { MenubarComponent } from './pages/menubar/menubar.component';
 import { CategoriaComponent } from './pages/categoria/categoria.component';
 import { CategoriaService } from './services/categoria.service';
+import { ProdutoComponent } from './pages/produto/produto.component';
+import { ProdutoService } from './services/produto.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { CategoriaService } from './services/categoria.service';
     FooterComponent,
     HeaderComponent,
     MenubarComponent,
-    CategoriaComponent
+    CategoriaComponent,
+    ProdutoComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +48,7 @@ import { CategoriaService } from './services/categoria.service';
   ],
   providers: [
     CategoriaService,
+    ProdutoService,
     MessageService
   ],
   bootstrap: [AppComponent]
