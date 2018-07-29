@@ -6,7 +6,11 @@
       <p-table [value]="produtos" responsive="true">
         <ng-template pTemplate="caption">
           Listagem de produtos
+          <div class="btn-right">
+            <button type="button" icon="pi pi-plus" pButton></button>
+          </div>
         </ng-template>
+       
         <ng-template pTemplate="header">
           <tr>
             <th class="col-header-id">Código</th>
