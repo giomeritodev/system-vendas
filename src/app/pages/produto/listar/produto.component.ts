@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ProdutoService } from '../../services/produto.service';
+import { ProdutoService } from '../../../services/produto.service';
 import { MessageService } from 'primeng/components/common/messageservice';
-import { ProdutoDTO } from '../../models/produto.dto';
+import { ProdutoDTO } from '../../../models/produto.dto';
 
 @Component({
   selector: 'app-produto',

@@ -1,21 +1,38 @@
 <div class="container">
 
   <div class="ui-g">
+
+    <div class="ui-g-6">
+      <div class="input-group h2">
+        <input pInputText class="form-control" id="search" type="text" placeholder="Pesquisar Itens">
+        <span class="input-group-btn">
+          <button class="btn btn-primary" type="submit">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+      </div>
+    </div>
+    <div class="ui-g-3">
+      <a class="btn btn-primary pull-right h2" routerLink="novo">Novo Item</a>
+    </div>
+
     <div class="ui-g-12">
 
       <p-table [value]="produtos" responsive="true">
         <ng-template pTemplate="caption">
           Listagem de produtos
+          <!--
           <div class="btn-right">
-            <button type="button" icon="pi pi-plus" pButton></button>
-          </div>
+            <button pButton type="button" icon="pi pi-plus" routerLink="novo"></button>
+          </div>-->
         </ng-template>
-       
+
         <ng-template pTemplate="header">
           <tr>
             <th class="col-header-id">Código</th>
             <th>Descrição do produto</th>
             <th>Valor</th>
+            <th>Ações</th>
           </tr>
         </ng-template>
         <ng-template pTemplate="body" let-produto>
@@ -32,6 +49,11 @@
             <td>
               <span class="ui-column-title">Valor</span>
               {{produto.valor}}
+            </td>
+            <td>
+                <button pButton icon="pi pi-check" class="btn-check"></button>&nbsp;
+                <button pButton icon="pi pi-pencil" class="btn-pencil"></button>&nbsp;
+                <button pButton icon="pi pi-trash" class="btn-delete"></button>
             </td>
           </tr>
         </ng-template>
