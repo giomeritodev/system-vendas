@@ -39,7 +39,7 @@ export class CategoriaComponent implements OnInit {
     this.categoriaService.findAll().subscribe(response => {
       this.categorias = response;
     }, error => {
-      this.messageService.add({severity: 'error', detail: 'Erro ao retornar os dados'});
+      this.messageService.add({severity: 'error', detail: 'Não foi possivel retornar lista de categorias!'});
     });
   }
 

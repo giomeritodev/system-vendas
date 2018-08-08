@@ -1,0 +1,11 @@
+.btn-check{
+    background-color: green;
+}
+
+.btn-pencil{
+    background-color: yellow;
+    color: green;
+}
+.btn-delete{
+    background-color: red;
+}

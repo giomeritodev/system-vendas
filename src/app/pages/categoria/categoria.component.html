@@ -41,8 +41,8 @@
             <td>
               <span class="ui-column-title">Categoria</span>{{categoria.nome}}</td>
             <td>
-              <button type="button" icon="pi pi-pencil" pButton (click)="editar(categoria.id)"></button>&nbsp;
-              <button type="button" icon="pi pi-trash" pButton (click)="delete(categoria.id)"></button>
+              <button type="button" icon="pi pi-pencil" class="btn-pencil" pButton (click)="editar(categoria.id)"></button>&nbsp;
+              <button type="button" icon="pi pi-trash" class="btn-delete" pButton (click)="delete(categoria.id)"></button>
             </td>
           </tr>
         </ng-template>

@@ -3,3 +3,30 @@
 .btn-right{
     text-align: right;
 }
+
+.col-header-id{
+    width: 10%;
+    text-align: center;
+}
+.col-header-codint{
+    width: 10%;
+    text-align: center;
+}
+
+.col-header-item{
+    width: 30%;
+    text-align: center;
+}
+
+.col-header-valor{
+    width: 10%;
+    text-align: center;
+}
+.col-header-acoes{
+    width: 25%;
+    text-align: center;
+}
+.col-header-codigobr{
+    width: 20%;
+    text-align: center;
+}
